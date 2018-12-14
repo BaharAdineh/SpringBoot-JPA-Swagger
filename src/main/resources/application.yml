@@ -1,0 +1,28 @@
+server:
+  address:
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServer2012Dialect
+    database: sql_server
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: true
+
+  datasource:
+    type: com.microsoft.sqlserver.jdbc.SQLServerDataSource
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;database=TestDB;integratedSecurity=false;useParallel=true;
+    username: sa
+    password: 123456
+    tomcat:
+      max-active: 1
+
+security:
+  basic:
+
+
